@@ -3,10 +3,17 @@ const mydiv = document.getElementsByClassName("mydiv")
 
 try {
     document.createEvent("TouchEvent")
+    let p = document.getElementById("title1")
+    let p1 = document.getElementById("title2")
+    p1.style.display = "none"
+
+
+    
     mydiv[0].addEventListener("touchstart", e => {
         e.preventDefault()
             ;[...e.changedTouches].forEach(touch => {
                 mydiv[0].id = touch.identifier
+                p.style.display = "none"
             })
 
     })
@@ -23,15 +30,19 @@ try {
                 const dot = document.getElementById(touch.identifier)
                 mydiv[0].style.top = `${touch.pageY}px`
                 mydiv[0].style.left = `${touch.pageX}px`
+                p.style.display = "block"
             })
 
     })
 
 } catch (error) {
+    let p = document.getElementById("title1")
+    let p1 = document.getElementById("title2")
+    p.style.display = "none"
+    p1.style.display = "block"
     window.addEventListener("keydown", move)
     let x = 0
     let y = 0
-
     function move(event) {
         switch (event.key) {
             case "ArrowDown":
@@ -58,6 +69,7 @@ try {
                 break
 
         }
+        p1.style.display = "none"
     }
 }
 
