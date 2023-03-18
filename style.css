@@ -5,11 +5,13 @@
     border: 1px solid black;
     position: relative;
 }
-.dot{
-    background-color: red;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50px;
-    position: absolute;
-    transform: translate(-50%,-50%);
+#title1{
+    text-align: center;
+    font-size: 30px;
+    display: block;
+}
+#title2{
+    text-align: center;
+    font-size: 30px;
+    display: block;
 }
